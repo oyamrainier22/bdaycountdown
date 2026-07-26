@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Countdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="floating-layer" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="profile-wrap reveal">
+          <img id="profilePhoto" class="profile-photo" src="images/profile.jpg" alt="Birthday celebrant profile photo">
+          <span class="profile-ring"></span>
+        </div>
+
+        <p class="eyebrow reveal">A little love, counting down to a beautiful day</p>
+        <h1 class="reveal">Countdown to <span id="personName">My Love</span>'s Birthday</h1>
+        <p class="subtitle reveal">Every second brings us closer to your special day.</p>
+
+        <div class="countdown-grid reveal" aria-live="polite">
+          <article class="time-card">
+            <strong id="days">00</strong>
+            <span>Days</span>
+          </article>
+          <article class="time-card">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+          </article>
+          <article class="time-card">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+          </article>
+          <article class="time-card">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+          </article>
+        </div>
+
+        <p class="birthday-date reveal" id="birthdayDateText">Birthday date</p>
+
+        <div class="progress-panel reveal">
+          <div class="progress-copy">
+            <span>Birthday progress</span>
+            <strong id="progressLabel">0%</strong>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a class="primary-btn" href="#notes">Open Love Letter</a>
+        </div>
+      </div>
+
+      <div class="featured-photo reveal">
+        <img id="featuredPhoto" src="images/featured.jpg" alt="Featured romantic birthday photo">
+        <div class="featured-caption">
+          <span>For the girl who makes ordinary days feel magical.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section slideshow-section" id="photos">
+      <div class="section-heading">
+        <p class="eyebrow">Our favorite moments</p>
+        <h2>Memories I keep close</h2>
+      </div>
+
+      <div class="slideshow" id="slideshow">
+        <button class="slide-btn prev" id="prevSlide" type="button" aria-label="Previous photo">&lsaquo;</button>
+        <div class="slide-frame">
+          <img id="slideImage" src="images/photo-1.jpg" alt="Romantic memory photo">
+        </div>
+        <button class="slide-btn next" id="nextSlide" type="button" aria-label="Next photo">&rsaquo;</button>
+        <p class="slide-caption" id="slideCaption">Every smile of yours becomes my favorite memory.</p>
+        <div class="dots" id="slideDots" aria-label="Photo navigation"></div>
+      </div>
+    </section>
+
+    <section class="section notes-section" id="notes">
+      <div class="section-heading">
+        <p class="eyebrow">Tap to open</p>
+        <h2>A letter for my girlfriend</h2>
+      </div>
+
+      <div class="letter-wrap">
+        <button class="note-card letter-card locked" id="loveLetterCard" type="button">
+          <span class="letter-stamp">For you</span>
+          <span class="letter-flap"></span>
+          <strong>Open My Love Letter</strong>
+          <small id="letterStatus">Sealed until your birthday.</small>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="noteModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card letter-modal-card">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Close note">&times;</button>
+      <p class="eyebrow">A birthday letter</p>
+      <h3 id="modalTitle">My Love</h3>
+      <div class="letter-paper">
+        <p class="letter-date">July 27, 2026</p>
+        <p class="letter-greeting">To my beautiful girlfriend,</p>
+        <div id="modalMessage" class="letter-message"></div>
+        <p class="letter-signature">With all my love,<br>Me</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="photo-modal" id="photoModal" role="dialog" aria-modal="true" aria-label="Opened slideshow photo">
+    <div class="photo-modal-card">
+      <button class="modal-close" id="closePhotoModal" type="button" aria-label="Close photo">&times;</button>
+      <img id="openedPhoto" src="images/profile.jpg" alt="Opened romantic memory">
+      <p id="openedPhotoCaption"></p>
+    </div>
+  </div>
+
+  <div class="celebration" id="celebration" aria-hidden="true">
+    <div class="celebration-card">
+      <div class="celebration-photo-wrap">
+        <img id="celebrationPhoto" class="celebration-photo" src="images/profile.jpg" alt="Birthday celebrant portrait">
+        <span class="celebration-halo"></span>
+      </div>
+      <p class="eyebrow">The wait is over</p>
+      <h2>Happy Birthday, <span id="celebrationName">My Love</span>!</h2>
+      <p>Today is all yours. May it feel as beautiful, soft, and unforgettable as you are to me.</p>
+    </div>
+  </div>
+
+  <div class="birthday-player" id="birthdayPlayer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
